@@ -1,7 +1,7 @@
 import { Input } from "@mui/material";
 import { useEffect, useState } from "react";
 
-export function ConvertionComponent(props) {
+export default function ConvertionComponent(props) {
   const [amountToConvert, setAmountToConvert] = useState(0);
   const [convertedAmount, setConvertedAmount] = useState(0);
 
@@ -11,7 +11,7 @@ export function ConvertionComponent(props) {
 
   useEffect(() => {
     calculateConvertionAmount();
-  }, [amountToConvert]);
+  }, [amountToConvert, props.exchangeRate]);
 
   return (
     <>
