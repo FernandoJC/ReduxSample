@@ -1,6 +1,5 @@
 import Head from "next/head";
-import { Button } from "@mui/material";
-import { CoolComponent } from "../components/coolComponent";
+import { ConvertionComponent } from "../components/convertionComponent";
 
 export default function Home() {
   return (
@@ -12,8 +11,8 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>Let's create a Redux app</h1>
-        <CoolComponent initialNumber={500} />
+        <h1>Let's create a currency exchange house app!</h1>
+        <ConvertionComponent exchangeRate={3} />
       </main>
     </div>
   );
