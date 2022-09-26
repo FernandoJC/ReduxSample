@@ -3,6 +3,6 @@ import exchangeRateReducer from "./slices/exchangeRateSlice";
 
 export default configureStore({
   reducer: {
-    exchangeRate: exchangeRateReducer,
+    exchangeRateReducer: exchangeRateReducer,
   },
 });

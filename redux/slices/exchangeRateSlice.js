@@ -7,6 +7,9 @@ export const exchangeRateSlice = createSlice({
   },
   reducers: {
     updateExchangeRate: (state, action) => {
+      console.log(
+        `Updating exchange rate from ${state.exchangeRate} to ${action.payload}.`
+      );
       state.exchangeRate = action.payload;
     },
   },
