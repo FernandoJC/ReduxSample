@@ -13,4 +13,4 @@ export const exchangeRateSlice = createSlice({
 });
 
 export const { updateExchangeRate } = exchangeRateSlice.actions;
-export default exchangeRateSlice.reducer;
+export default exchangeRateSlice.reducer; // Reducer -> Import with the name you wish without using brakets (since it is default)
