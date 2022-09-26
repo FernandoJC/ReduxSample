@@ -1,17 +1,21 @@
 import { Input } from "@mui/material";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-export default function ConvertionComponent(props) {
+export default function ConvertionComponent() {
   const [amountToConvert, setAmountToConvert] = useState(0);
   const [convertedAmount, setConvertedAmount] = useState(0);
+  const reduxExchangeRate = useSelector(
+    (state) => state.exchangeRateReducer.exchangeRate
+  );
 
   const calculateConvertionAmount = () => {
-    setConvertedAmount(amountToConvert / props.exchangeRate);
+    setConvertedAmount(amountToConvert / reduxExchangeRate);
   };
 
   useEffect(() => {
     calculateConvertionAmount();
-  }, [amountToConvert, props.exchangeRate]);
+  }, [amountToConvert, reduxExchangeRate]);
 
   return (
     <>

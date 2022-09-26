@@ -1,19 +1,8 @@
 import Head from "next/head";
-import { useSelector, useDispatch } from "react-redux";
 import ConvertionComponent from "../components/convertionComponent";
 import CurrencyExchangeComponent from "../components/currencyExchangeComponent";
-import { updateExchangeRate } from "../redux/slices/exchangeRateSlice";
 
 export default function Home() {
-  const reduxDispatch = useDispatch();
-  const reduxExchangeRate = useSelector(
-    (state) => state.exchangeRateReducer.exchangeRate
-  );
-
-  const reduxUpdateExchangeRate = (newExchangeRate) => {
-    reduxDispatch(updateExchangeRate(newExchangeRate));
-  };
-
   return (
     <div>
       <Head>
@@ -24,11 +13,8 @@ export default function Home() {
 
       <main>
         <h1>Let's create a currency exchange house app!</h1>
-        <ConvertionComponent exchangeRate={reduxExchangeRate} />
-        <CurrencyExchangeComponent
-          exchangeRate={reduxExchangeRate}
-          updateExchangeRate={reduxUpdateExchangeRate}
-        />
+        <ConvertionComponent />
+        <CurrencyExchangeComponent />
       </main>
     </div>
   );
